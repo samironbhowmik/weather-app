@@ -11,7 +11,7 @@ const Weather = () => {
 
   const handleSearch = async(e) => {
     // fetching from api
-    // e.preventDefault()
+    e.preventDefault()
     // const result = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=57&lon=-2.15&appid=${API_key}&units=metric`)
     // console.log(result);
     // const data = await result.json()
@@ -23,21 +23,16 @@ const Weather = () => {
         console.log(error);
     })
 
-    //  if(data.cod===200)
-    // {
-    //     setWeatherData(data)
-    //     setCity(search)
-    //     if(lastCity.length===3)
-    //     {
-    //         setLastCity([search, ...lastCity.slice(0,2)])
+    
+        setCity(search)
+        if(lastCity.length===3)
+        {
+            setLastCity([search, ...lastCity.slice(0,2)])
 
-    //     }else{
-    //         setLastCity([search, ...lastCity])
-    //     }
-    // }
-    // else{
-    //     alert("Enter Valid City Name!")
-    // }
+        }else{
+            setLastCity([search, ...lastCity])
+        }
+    
 
   }
   const handleChange = (e) => {
